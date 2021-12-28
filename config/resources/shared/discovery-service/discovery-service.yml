@@ -27,4 +27,5 @@ management:
         include: "*"
 
 app: 
-  name: 'Dima new new'
+  home: 'moscow'
+  work: 'new-york'
