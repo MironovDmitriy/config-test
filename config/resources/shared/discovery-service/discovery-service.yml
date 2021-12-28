@@ -16,3 +16,6 @@ eureka:
 ribbon:
   ConnectTimeout: 100000
   ReadTimeout: 300000
+
+app: 
+  name: 'Dima'
