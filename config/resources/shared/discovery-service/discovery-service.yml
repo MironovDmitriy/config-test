@@ -17,5 +17,14 @@ ribbon:
   ConnectTimeout: 100000
   ReadTimeout: 300000
 
+  
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 app: 
   name: 'Dima new'
