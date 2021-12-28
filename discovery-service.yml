@@ -1,0 +1,18 @@
+server:
+  port: 9002
+
+eureka:
+  datacenter: moscow
+  instance:
+    hostname: localhost
+    metadataMap:
+      instanceId: EUREKA01_${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+ribbon:
+  ConnectTimeout: 100000
+  ReadTimeout: 300000
