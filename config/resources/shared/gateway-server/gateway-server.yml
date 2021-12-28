@@ -1,0 +1,44 @@
+server:
+  port: 9004
+
+logging:
+  level:
+    org.springframework.cloud.netflix.zuul: ERROR
+    org.springframework.security: WARN
+
+spring.servlet.multipart:
+  max-file-size: 64MB
+  max-request-size: 64MB
+
+zuul:
+  host.socket-timeout-millis: 2147483647
+  routes:
+    common-service:
+      path: /common/**
+      sensitiveHeaders:
+      serviceId: common-service
+  add-proxy-headers: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9002/eureka/
+
+#security:
+#  user:
+#    name: root
+#    password: password
+#  oauth2:
+#    client:
+#      client-id: gateway-server
+#      client-secret: secret
+#      accessTokenUri: http://localhost:8080/uaa/oauth/token
+#      userAuthorizationUri: http://localhost:8080/uaa/oauth/authorize
+#    resource:
+#      userInfoUri: http://localhost:8080/uaa/user
+#      preferTokenInfo: true
+#      filter-order: 3
+
+ribbon:
+  ConnectTimeout: 100000
+  ReadTimeout: 7200000
