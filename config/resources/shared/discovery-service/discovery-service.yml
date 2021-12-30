@@ -27,5 +27,5 @@ management:
         include: "*"
 
 app: 
-  home: 'moscow'
+  home: 'omsk'
   work: 'new-york'
